@@ -48,9 +48,9 @@ const handler = nc()
                 }
                 await usuarioModel.create(usuarioASerSaalvo);
                 return res.status(200).json({ msg : 'Usuario criado com sucesso!'});
-        }catch(e){
+        }catch(e : any){
             console.log(e);
-            return res.status(500).json({ erro : 'erro ao cadastrar usuario'});
+            return res.status(500).json({ erro : 'erro ao subir imagem do cadastro usuario'});
 
         }
 
