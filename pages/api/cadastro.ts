@@ -34,8 +34,7 @@ const handler = nc()
             if(usuariosComOMesmoEmail && usuariosComOMesmoEmail.length > 0){
                 return res.status(400).json({erro : 'Ja existe uma conta com esse email'})
             }
-    
-    
+        
             // enviar a imagem do multer para o cosmic
             const image = await uploadImagemCosmic(req);
         
@@ -50,7 +49,7 @@ const handler = nc()
                 return res.status(200).json({ msg : 'Usuario criado com sucesso!'});
         }catch(e : any){
             console.log(e);
-            return res.status(500).json({ erro : 'erro ao subir imagem do cadastro usuario'});
+            return res.status(400).json({ erro : e.toString()});
 
         }
 
